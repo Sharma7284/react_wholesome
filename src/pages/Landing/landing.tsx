@@ -90,7 +90,7 @@ const Landing = () => {
           <p className="text-4xl font-bold">Healthy Eating</p>
           <Button className="bg-black text-white">View all</Button>
         </div>
-        <div className="grid grid-cols-4 gap-8 ">
+        <div className="grid grid-cols-4 gap-12 ">
           {postData.map((m, i) => (
             <div className="flex flex-col gap-2" key={i}>
               <div>
@@ -114,7 +114,7 @@ const Landing = () => {
         <div className="flex justify-between mb-8">
           <p className="text-4xl font-bold">Wellness Editor's Picks</p>
         </div>
-        <div className="grid grid-cols-3 gap-8 ">
+        <div className="grid grid-cols-3 gap-12 ">
           {postData.slice(0, 3).map((m, i) => (
             <div className="flex flex-col gap-2" key={i}>
               <div className="flex items-end gap-4">
