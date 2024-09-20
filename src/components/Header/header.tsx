@@ -8,7 +8,6 @@ import APP_LOGO from "../../assets/images/app_logo.png";
 
 const Header = () => {
   //   const [list, setList] = useState([]);
-
   const { toggleColorMode, colorMode } = useColorMode();
 
   useEffect(() => {

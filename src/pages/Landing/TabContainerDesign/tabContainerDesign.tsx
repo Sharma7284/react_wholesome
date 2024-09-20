@@ -22,12 +22,12 @@ const TabContainerDesign = ({ data }: any) => {
               <div className="bg-grey"></div>
             )}
             <div className="flex-1">
-              <p className="text-xl font-bold text-left">{m?.title}</p>
+              <p className="text-xl font-bold text-left line-clamp-2">{m?.title}</p>
             </div>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <p className="text-2xl text-left">{m?.author_name}</p>
               <p>{new Date(m?.created_at)?.toISOString().split(`T`)[0]}</p>
-            </div>
+            </div> */}
             <div className="flex gap-4 justify-between">
               <p>{m?.postCategoryId?.name}</p>
               <p>{new Date(m?.created_at)?.toISOString().split(`T`)[0]}</p>

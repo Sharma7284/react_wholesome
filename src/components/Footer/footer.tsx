@@ -1,4 +1,4 @@
-import { Divider } from "@chakra-ui/react";
+import { Divider, Link, useColorMode } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {
@@ -8,8 +8,16 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+  const { colorMode } = useColorMode();
+
   return (
-    <footer className="px-12 pt-16 pb-12 bg-[#fafafa] ">
+    <footer
+      className={`px-12 pt-16 pb-12 ${
+        colorMode === "light"
+          ? "bg-[#fafafa]"
+          : "shadow-md-[-10px_0px_0px_0px_rgba(255,255,255,1)]"
+      }`}
+    >
       <div className="flex gap-8 w-full max-w-[1540px] mx-auto">
         <div className="flex-1">
           <div>
@@ -45,7 +53,9 @@ const Footer = () => {
             <div className="flex-1">
               <p className="font-bold">Help</p>
               <ul>
-                <li>FAQ</li>
+                <li>
+                  <Link href="">FAQ</Link>
+                </li>
                 <li>Customer service</li>
                 <li>How to guides</li>
                 <li>Contact us</li>

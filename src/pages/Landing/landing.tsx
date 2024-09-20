@@ -9,6 +9,7 @@ import POST_03 from "../../assets/images/post_03.png";
 import POST_04 from "../../assets/images/post_04.png";
 import MOBILE from "../../assets/images/mobile.webp";
 import { useColorMode } from "@chakra-ui/react";
+import Hero from "./Hero/hero.tsx";
 
 const Landing = () => {
   const { colorMode } = useColorMode();
@@ -74,6 +75,7 @@ const Landing = () => {
 
   return (
     <div className="max-w-[1540px] mx-auto">
+      <Hero />
       {tabsList.length > 0 && (
         <TabsContainer
           data={tabContent}
