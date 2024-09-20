@@ -60,9 +60,7 @@ const Hero = () => {
             </div>
             <div className="flex gap-4">
               <Button
-                className={`p-8 border bg-[#f3b870] rounded-[16px_16px_16px_0px] text-xl text-black ${
-                  colorMode === "dark" ? "border-white" : "border-black"
-                }`}
+                className={`p-8 border bg-[#f3b870] rounded-[16px_16px_16px_0px] text-xl text-black border-black`}
               >
                 Start to read
               </Button>
@@ -113,7 +111,9 @@ const Hero = () => {
                 </Button>
               </div>
               <div className="monitization-text">
-                <h2 className="text-2xl text-black">Write. Inspire. Get rewarded.</h2>
+                <h2 className="text-2xl text-black">
+                  Write. Inspire. Get rewarded.
+                </h2>
               </div>
             </div>
           </div>

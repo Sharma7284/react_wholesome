@@ -3,6 +3,10 @@ import TabsContainer from "../../components/Tabs/TabsContainer.tsx";
 import { Button, Divider } from "@chakra-ui/react";
 import TabContainerDesign from "./TabContainerDesign/tabContainerDesign.tsx";
 import apiInstance from "../../core/apiService.ts";
+// const POST_01 = require(`../../assets/images/post_01.png`);
+// const POST_02 = require(`../../assets/images/post_02.png`);
+// const POST_03 = require(`../../assets/images/post_03.png`);
+// const POST_04 = require(`../../assets/images/post_04.png`);
 import POST_01 from "../../assets/images/post_01.png";
 import POST_02 from "../../assets/images/post_02.png";
 import POST_03 from "../../assets/images/post_03.png";
@@ -10,6 +14,7 @@ import POST_04 from "../../assets/images/post_04.png";
 import MOBILE from "../../assets/images/mobile.webp";
 import { useColorMode } from "@chakra-ui/react";
 import Hero from "./Hero/hero.tsx";
+import { toast } from "react-toastify";
 
 const Landing = () => {
   const { colorMode } = useColorMode();
@@ -48,6 +53,7 @@ const Landing = () => {
             label: m?.name?.replace(`Wellness`, ``),
           }))
         );
+        handleTabData(res?.data?.data?.[0]?.["postCategoryId"]);
       }
     });
   }, []);
@@ -56,11 +62,10 @@ const Landing = () => {
     handleTabData(id);
   };
 
-  useEffect(() => {
-    handleTabData(tabsList?.[0]?.["postCategoryId"]);
-  }, [tabsList]);
-
   const handleTabData = (id: any) => {
+    const loading = toast.loading(`Loading...`, {
+      isLoading: true,
+    });
     apiInstance
       .post(`/posts/getPostsByCategory`, {
         pageNumber: 1,
@@ -68,6 +73,13 @@ const Landing = () => {
       })
       .then((res) => {
         if (res.data) {
+          toast.update(loading, {
+            type: `success`,
+            render: `Success`,
+            pauseOnHover: true,
+            isLoading: false,
+            autoClose: 1000,
+          });
           setTabContent(res.data.data);
         }
       });
