@@ -2,7 +2,7 @@ import { Text } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import apiInstance from "../../core/apiService.ts";
-import { faArrowTrendUp, faThumbTack } from "@fortawesome/free-solid-svg-icons";
+import { faThumbTack } from "@fortawesome/free-solid-svg-icons";
 
 const PeopleToFollow = ({ id }: any) => {
   const [popularData, setPopularData] = useState([]);

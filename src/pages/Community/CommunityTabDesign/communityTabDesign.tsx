@@ -5,10 +5,7 @@ import { useNavigate } from "react-router-dom";
 const CommunityTabDesign = ({ data, isSkeleton = true }: any) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (data) {
-    }
-  }, [data]);
+  useEffect(() => {}, [data]);
 
   return (
     data &&
@@ -16,7 +13,7 @@ const CommunityTabDesign = ({ data, isSkeleton = true }: any) => {
       <div className="flex flex-col gap-4">
         {data?.map((m: any, i: any) => (
           <div
-            onClick={() => navigate(`/community/${m?.title.toLowerCase()}`)}
+            onClick={() => navigate(`/community/${m?.title}?id=${m?.id}`)}
             key={i}
             className="bg-[#f3f4f6] rounded-lg p-4 flex justify-between cursor-pointer"
           >
@@ -24,9 +21,6 @@ const CommunityTabDesign = ({ data, isSkeleton = true }: any) => {
               <Text fontSize={`xl`} className="text-start font-bold">
                 {m.title}
               </Text>
-              {/* <Text fontSize={`lg`} className="text-start">
-                {m.title}
-              </Text> */}
             </div>
             <div className="">
               <Text fontSize={`lg`} className="text-center font-bold">

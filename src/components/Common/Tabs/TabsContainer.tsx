@@ -22,12 +22,10 @@ const TabsContainer = ({
             <TabList
               overflowX="auto"
               css={css({
-                scrollbarWidth: "none",
                 // WebkitOverflowScrolling: "touch",
                 boxShadow: "0 0px 0 rgba(0, 0, 0, 0.1)",
                 border: "0 none",
                 "::-webkit-scrollbar": { display: "none" },
-                // "-webkit-overflow-scrolling": "touch",
               })}
               className={`gap-2 overflow-auto max-w-[100%] ${
                 isCenter ? `justify-center` : `justify-start`
