@@ -34,7 +34,7 @@ const Header = () => {
         <img src={APP_LOGO} className="h-16" alt="" />
       </div>
       <div className="max-w-[50%] flex-1">
-        <Input variant="filled" placeholder="Search" className="rounded-full" />
+        <Input variant="filled" placeholder="Search" className="rounded-full" onChange={handleSearch}/>
       </div>
       <div className="flex items-center gap-4">
         <IconButton

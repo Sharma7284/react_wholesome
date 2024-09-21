@@ -8,7 +8,7 @@ import P4 from "../../../assets/images/p4.svg";
 import PLEASUREICON from "../../../assets/images/pleasure_icon.svg";
 
 const Hero = () => {
-  const { toggleColorMode, colorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   return (
     <section id="hero" className="w-full mt-8 mb-12">

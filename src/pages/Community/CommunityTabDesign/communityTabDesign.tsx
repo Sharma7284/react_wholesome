@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 const CommunityTabDesign = ({ data }: any) => {
   useEffect(() => {
     console.log(data);
-  }, []);
+  }, [data]);
 
   return (
     data && (

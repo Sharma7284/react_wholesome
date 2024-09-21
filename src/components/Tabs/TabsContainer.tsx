@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 const TabsContainer = ({ data, tabs, TabsDesign, onChange }: any) => {
   useEffect(() => {
     console.log(data);
-  }, []);
+  }, [data]);
 
   const onChangeTab = (id: any) => {
     onChange(id);
