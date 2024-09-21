@@ -1,10 +1,10 @@
+import { Text } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import apiInstance from "../../core/apiService.ts";
-import { Text } from "@chakra-ui/react";
-import { faArrowTrendUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowTrendUp, faThumbTack } from "@fortawesome/free-solid-svg-icons";
 
-const Popular = ({ id }: any) => {
+const PeopleToFollow = ({ id }: any) => {
   const [popularData, setPopularData] = useState([]);
 
   useEffect(() => {
@@ -21,13 +21,15 @@ const Popular = ({ id }: any) => {
   return (
     <div className="flex flex-col gap-4">
       <Text fontSize="2xl" className="font-bold">
-        <FontAwesomeIcon icon={faArrowTrendUp}></FontAwesomeIcon> Popular
+        <FontAwesomeIcon icon={faThumbTack}></FontAwesomeIcon> People to follow
       </Text>
       <div className="flex flex-col gap-6">
         {popularData.map((m: any, i: any) => (
           <div key={i}>
             <div>
-              <Text fontSize={"xl"} className="line-clamp-2">{`#${i + 1} ${m?.title}`}</Text>
+              <Text fontSize={"xl"} className="line-clamp-2">{`#${i + 1} ${
+                m?.title
+              }`}</Text>
             </div>
             <div></div>
           </div>
@@ -37,4 +39,4 @@ const Popular = ({ id }: any) => {
   );
 };
 
-export default Popular;
+export default PeopleToFollow;
