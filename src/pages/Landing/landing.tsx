@@ -76,7 +76,6 @@ const Landing = () => {
           toast.update(loading, {
             type: `success`,
             render: `Success`,
-            pauseOnHover: true,
             isLoading: false,
             autoClose: 1000,
           });
@@ -87,81 +86,87 @@ const Landing = () => {
 
   return (
     <div className="max-w-[1540px] mx-auto">
-      <Hero />
-      {tabsList.length > 0 && (
-        <TabsContainer
-          data={tabContent}
-          tabs={tabsList}
-          TabsDesign={TabContainerDesign}
-          onChange={onChangeTab}
-        ></TabsContainer>
-      )}
-      <Divider className="max-w-[1540px] mx-auto" />
-      <div className="mt-8 mb-16">
-        <div className="flex justify-between mb-8">
-          <p className="text-4xl font-bold">Healthy Eating</p>
-          <Button className="bg-black text-white">View all</Button>
-        </div>
-        <div className="grid grid-cols-4 gap-12 ">
-          {postData.map((m, i) => (
-            <div className="flex flex-col gap-2" key={i}>
-              <div>
-                <img className="w-full rounded-2xl" src={m?.postUrl} alt="" />
-              </div>
-              <div>
-                <p className="font-bold text-sm">Health Focus</p>
-              </div>
-              <div>
-                <p className="font-bold text-xl">{m?.title}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="font-bold text-sm">HEALTHY LIVIG</p>
-                <p className="font-bold text-sm">{m?.created_at}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-8 mb-16">
-        <div className="flex justify-between mb-8">
-          <p className="text-4xl font-bold">Wellness Editor's Picks</p>
-        </div>
-        <div className="grid grid-cols-3 gap-12 ">
-          {postData.slice(0, 3).map((m, i) => (
-            <div className="flex flex-col gap-2" key={i}>
-              <div className="flex items-end gap-4">
-                <div className="text-8xl">{i + 1}</div>
-                <img className="w-full rounded-2xl" src={m?.postUrl} alt="" />
-              </div>
-              <div>
-                <p className="font-bold text-md">Health Focus</p>
-              </div>
-              <div>
-                <p className="font-bold text-xl">{m?.title}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="font-bold text-sm">HEALTHY LIVIG</p>
-                <p className="font-bold text-sm">{m?.created_at}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-8 mb-16">
-        <div className="rounded-lg border border-black bg-[#fae8d3] flex p-12">
-          <div className="basis-3/5">
-            <img src={MOBILE} alt="" />
+      <div className="mx-4">
+        <Hero />
+        {tabsList.length > 0 && (
+          <TabsContainer
+            data={tabContent}
+            tabs={tabsList}
+            TabsDesign={TabContainerDesign}
+            onChange={onChangeTab}
+          ></TabsContainer>
+        )}
+        <Divider className="max-w-[1540px] mx-auto" />
+        <div className="mt-8 mb-16">
+          <div className="flex justify-between mb-8">
+            <p className="text-4xl font-bold">Healthy Eating</p>
+            <Button className="bg-black text-white">View all</Button>
           </div>
-          <div className="basis-2/5">
-            <p
-              className={`text-lg mb-4 ${colorMode === `dark` && "text-black"}`}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id
-              odio maximus, congue felis sed, viverra mauris. Praesent luctus
-              cursus risus porttitor bibendum. Proin ac ante ac lorem rutrum
-              lacinia. Phasellus semper diam eget congue facilisis.
-            </p>
-            <Button className="bg-[#135947] text-white">Call to action</Button>
+          <div className="grid grid-cols-4 gap-12 max-sm:grid-cols-1">
+            {postData.map((m, i) => (
+              <div className="flex flex-col gap-2" key={i}>
+                <div>
+                  <img className="w-full rounded-2xl" src={m?.postUrl} alt="" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm">Health Focus</p>
+                </div>
+                <div>
+                  <p className="font-bold text-xl">{m?.title}</p>
+                </div>
+                <div className="flex justify-between">
+                  <p className="font-bold text-sm">HEALTHY LIVIG</p>
+                  <p className="font-bold text-sm">{m?.created_at}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-8 mb-16">
+          <div className="flex justify-between mb-8">
+            <p className="text-4xl font-bold">Wellness Editor's Picks</p>
+          </div>
+          <div className="grid grid-cols-3 gap-12 max-sm:grid-cols-1">
+            {postData.slice(0, 3).map((m, i) => (
+              <div className="flex flex-col gap-2" key={i}>
+                <div className="flex items-end gap-4">
+                  <div className="text-8xl">{i + 1}</div>
+                  <img className="w-full rounded-2xl" src={m?.postUrl} alt="" />
+                </div>
+                <div>
+                  <p className="font-bold text-md">Health Focus</p>
+                </div>
+                <div>
+                  <p className="font-bold text-xl">{m?.title}</p>
+                </div>
+                <div className="flex justify-between">
+                  <p className="font-bold text-sm">HEALTHY LIVIG</p>
+                  <p className="font-bold text-sm">{m?.created_at}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-8 mb-16">
+          <div className="rounded-lg border border-black bg-[#fae8d3] flex p-12 max-sm:flex-col">
+            <div className="basis-3/5">
+              <img src={MOBILE} alt="" />
+            </div>
+            <div className="basis-2/5">
+              <p
+                className={`text-lg mb-4 ${
+                  colorMode === `dark` && "text-black"
+                }`}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                id odio maximus, congue felis sed, viverra mauris. Praesent
+                luctus cursus risus porttitor bibendum. Proin ac ante ac lorem
+                rutrum lacinia. Phasellus semper diam eget congue facilisis.
+              </p>
+              <Button className="bg-[#135947] text-white">
+                Call to action
+              </Button>
+            </div>
           </div>
         </div>
       </div>

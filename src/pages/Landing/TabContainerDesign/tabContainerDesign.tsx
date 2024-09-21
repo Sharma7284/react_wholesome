@@ -1,26 +1,23 @@
 import React from "react";
+import DUMMYIMG from "../../../assets/images/dummy_img.jpg";
 
 const TabContainerDesign = ({ data }: any) => {
   return (
-    <div className="grid grid-cols-3 gap-12">
+    <div className="grid grid-cols-3 gap-12 max-sm:grid-cols-2">
       {data?.length > 0 &&
         data?.map((m: any, i: any) => (
           <div
             key={i}
             className="flex flex-col gap-2 max-w-[100%] mx-auto w-[-webkit-fill-available]"
           >
-            {m.postImage ? (
-              <div className="h-full w-full max-h-[250px]">
-                <img
-                  src={m.postImage}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full rounded-2xl object-cover"
-                />
-              </div>
-            ) : (
-              <div className="bg-grey"></div>
-            )}
+            <div className="h-full w-full max-h-[250px]">
+              <img
+                src={m?.postImage || DUMMYIMG}
+                alt=""
+                loading="lazy"
+                className="h-full w-full rounded-2xl object-cover"
+              />
+            </div>
             <div className="flex-1">
               <p className="text-xl font-bold text-left line-clamp-2">
                 {m?.title}

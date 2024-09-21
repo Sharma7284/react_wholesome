@@ -1,7 +1,11 @@
 import { Tabs, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 const TabsContainer = ({ data, tabs, TabsDesign, onChange }: any) => {
+  useEffect(() => {
+    console.log(data);
+  }, []);
+
   const onChangeTab = (id: any) => {
     onChange(id);
   };
@@ -11,7 +15,7 @@ const TabsContainer = ({ data, tabs, TabsDesign, onChange }: any) => {
       {tabs.length > 0 && (
         <div className="flex justify-between items-center max-w-[1540px] mx-auto py-4">
           <Tabs isLazy align="center" variant="soft-rounded" className="w-full">
-            <TabList className="gap-2">
+            <TabList className="gap-2 overflow-auto max-sm:justify-start">
               {tabs?.map((m: any, i: any) => (
                 <Tab
                   onClick={() => onChangeTab(m?.id)}
@@ -24,17 +28,24 @@ const TabsContainer = ({ data, tabs, TabsDesign, onChange }: any) => {
                     bg: `#135947`,
                   }}
                   key={i}
+                  className="whitespace-nowrap"
                 >
                   {m?.label}
                 </Tab>
               ))}
             </TabList>
             <TabPanels>
-              {data?.map((m: any, i: any) => (
-                <TabPanel key={i}>
+              {tabs && tabs.length > 0 ? (
+                tabs?.map((m: any, i: any) => (
+                  <TabPanel key={i}>
+                    <TabsDesign data={data}></TabsDesign>
+                  </TabPanel>
+                ))
+              ) : (
+                <TabPanel>
                   <TabsDesign data={data}></TabsDesign>
                 </TabPanel>
-              ))}
+              )}
             </TabPanels>
           </Tabs>
         </div>

@@ -11,11 +11,11 @@ const Hero = () => {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-    <section id="hero" className="hero mt-8 mb-12">
-      <div className="flex justify-between items-center gap-16">
-        <div className="basis-3/5 flex flex-col gap-12">
+    <section id="hero" className="w-full mt-8 mb-12">
+      <div className="flex justify-between items-center gap-16 max-sm:flex-col">
+        <div className="basis-3/5 flex flex-col gap-12 max-sm:w-full">
           <div className="">
-            <h1 className="text-[52px] font-bold">
+            <h1 className="text-[52px] font-bold max-sm:text-[32px]">
               Wholesome by WH: Your Gateway to a Healthier Life
             </h1>
           </div>
@@ -25,7 +25,7 @@ const Hero = () => {
             }`}
           ></div>
           <div className="flex flex-col gap-8">
-            <div className="join flex gap-8 items-center">
+            <div className="join flex gap-8 items-center max-sm:flex-col">
               <div className="flex">
                 <img
                   loading="lazy"
@@ -81,7 +81,7 @@ const Hero = () => {
               alt=""
             />
           </div>
-          <div className="flex gap-8 hero-bottom">
+          <div className="flex gap-8 hero-bottom max-sm:flex-col">
             <div className="bg-[#f1f0fe] p-4 rounded-[0px_24px_24px_24px] flex flex-col items-end gap-8">
               <div className="flex items-center gap-4 w-full">
                 <div className="">

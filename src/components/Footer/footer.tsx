@@ -12,13 +12,13 @@ const Footer = () => {
 
   return (
     <footer
-      className={`px-12 pt-16 pb-12 ${
+      className={`px-12 pt-16 pb-12 max-sm:px-6 ${
         colorMode === "light"
           ? "bg-[#fafafa]"
           : "shadow-md-[-10px_0px_0px_0px_rgba(255,255,255,1)]"
       }`}
     >
-      <div className="flex gap-8 w-full max-w-[1540px] mx-auto">
+      <div className="flex gap-8 w-full max-w-[1540px] mx-auto max-sm:flex-col">
         <div className="flex-1">
           <div>
             <h2 className="text-2xl font-bold">Wholesome</h2>
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <Divider orientation="vertical" />
         <div className="flex-[3] flex flex-col gap-12">
-          <div className="flex gap-12">
+          <div className="flex gap-12 max-sm:gap-4">
             <div className="flex-1">
               <p className="font-bold">Buy</p>
               <ul>
@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
             <div className="flex-1"></div>
           </div>
-          <div className="flex items-end gap-12">
+          <div className="flex items-end gap-12 max-sm:gap-4">
             <div className="flex-1">
               <p className="font-bold">Help</p>
               <ul>

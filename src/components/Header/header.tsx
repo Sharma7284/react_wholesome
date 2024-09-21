@@ -5,13 +5,15 @@ import apiInstance from "../../core/apiService.ts";
 import { Input, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { IconButton, useColorMode } from "@chakra-ui/react";
 import APP_LOGO from "../../assets/images/app_logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   //   const [list, setList] = useState([]);
+  const navigate = useNavigate();
   const { toggleColorMode, colorMode } = useColorMode();
 
   useEffect(() => {
-    handleSearch();
+    // handleSearch();
   }, []);
 
   //   Search website
@@ -28,7 +30,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center max-w-[1540px] mx-auto py-4">
-      <div>
+      <div onClick={() => navigate(`/`)} className="cursor-pointer">
         <img src={APP_LOGO} className="h-16" alt="" />
       </div>
       <div className="max-w-[50%] flex-1">
@@ -54,9 +56,12 @@ const Header = () => {
             icon={<FontAwesomeIcon icon={faBars}></FontAwesomeIcon>}
           ></MenuButton>
           <MenuList>
-            <MenuItem>Community</MenuItem>
-            <MenuItem>Login</MenuItem>
-            <MenuItem>Register</MenuItem>
+            <MenuItem onClick={() => navigate(`/`)}>Home</MenuItem>
+            <MenuItem onClick={() => navigate(`/community`)}>
+              Community
+            </MenuItem>
+            <MenuItem onClick={() => navigate(`/login`)}>Login</MenuItem>
+            <MenuItem onClick={() => navigate(`/register`)}>Register</MenuItem>
           </MenuList>
         </Menu>
       </div>
