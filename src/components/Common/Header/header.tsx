@@ -1,10 +1,10 @@
 import { faBars, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
-import apiInstance from "../../core/apiService.ts";
+import apiInstance from "../../../core/apiService.ts";
 import { Input, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { IconButton, useColorMode } from "@chakra-ui/react";
-import APP_LOGO from "../../assets/images/app_logo.png";
+import APP_LOGO from "../../../assets/images/app_logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -34,7 +34,12 @@ const Header = () => {
         <img src={APP_LOGO} className="h-16" alt="" />
       </div>
       <div className="max-w-[50%] flex-1">
-        <Input variant="filled" placeholder="Search" className="rounded-full" onChange={handleSearch}/>
+        <Input
+          variant="filled"
+          placeholder="Search"
+          className="rounded-full"
+          onChange={handleSearch}
+        />
       </div>
       <div className="flex items-center gap-4">
         <IconButton
@@ -57,6 +62,9 @@ const Header = () => {
           ></MenuButton>
           <MenuList>
             <MenuItem onClick={() => navigate(`/`)}>Home</MenuItem>
+            <MenuItem onClick={() => navigate(`/dashboard`)}>
+              Dashboard
+            </MenuItem>
             <MenuItem onClick={() => navigate(`/community`)}>
               Community
             </MenuItem>

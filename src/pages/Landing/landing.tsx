@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TabsContainer from "../../components/Tabs/TabsContainer.tsx";
+import TabsContainer from "../../components/Common/Tabs/TabsContainer.tsx";
 import { Button, Divider } from "@chakra-ui/react";
 import TabContainerDesign from "./TabContainerDesign/tabContainerDesign.tsx";
 import apiInstance from "../../core/apiService.ts";
@@ -77,7 +77,7 @@ const Landing = () => {
             type: `success`,
             render: `Success`,
             isLoading: false,
-            autoClose: 1000,
+            autoClose: 300,
           });
           setTabContent(res.data.data);
         }
@@ -88,12 +88,14 @@ const Landing = () => {
     <div className="max-w-[1540px] mx-auto">
       <div className="mx-4">
         <Hero />
+        <Divider className="max-w-[1540px] mx-auto mb-8" />
         {tabsList.length > 0 && (
           <TabsContainer
             data={tabContent}
             tabs={tabsList}
             TabsDesign={TabContainerDesign}
             onChange={onChangeTab}
+            isCenter={true}
           ></TabsContainer>
         )}
         <Divider className="max-w-[1540px] mx-auto" />

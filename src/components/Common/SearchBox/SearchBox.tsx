@@ -3,8 +3,8 @@ import { Input } from "@chakra-ui/react";
 
 const SearchBox = ({ placeholder }: any) => {
   return (
-    <div>
-      <Input type="text" placeholder={placeholder} />
+    <div className="mb-4 mx-4">
+      <Input type="text" variant={"filled"} placeholder={placeholder} />
     </div>
   );
 };
