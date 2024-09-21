@@ -24,7 +24,7 @@ const Dashboard = () => {
         // handleTabChange(res.data.data[0]?.["postCategoryId"]);
       }
     });
-  }, [tabList]);
+  }, []);
 
   const handleTabChange = (id: any) => {
     if (id !== true) {
